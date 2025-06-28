@@ -8,7 +8,7 @@
 
 typedef struct flags {
   int error;
-  int lena;
+  int len;
   int memory;
   char *reg_pattern;
   int e, i, v, c, l, n, h, s, f, o;
