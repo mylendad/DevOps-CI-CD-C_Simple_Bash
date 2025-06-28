@@ -32,4 +32,4 @@ void comparator(flags *argument, char *file, regex_t *reg, int argc,
 
 void output(flags *argument, int argc, char **argv);
 
-#endif
+#endif  // GREP_H
