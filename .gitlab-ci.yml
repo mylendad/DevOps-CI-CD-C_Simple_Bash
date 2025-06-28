@@ -12,11 +12,11 @@ format_project:
 
 build_project:
   stage: build
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq make gcc
   script:
-    - cd src
-    - make
+    - cd src && make
   artifacts:
-    name: "build-artifacts"
     paths:
       - src/build/       
     expire_in: 30 days
