@@ -7,7 +7,7 @@ stages:
 format_project:
   stage: format
   script:
-    - cp ../materials/linters/.clang-format ./
+    - cp materials/linters/.clang-format ./
     - >
       FORMAT_DIFF=$(find src/ -name "*.c" -o -name "*.h" | xargs clang-format -style=file -output-replacements-xml |
       grep -c "<replacement ")
@@ -37,7 +37,7 @@ tests_project:
   stage: tests
   script:
     - chmod +x tests/tests.sh
-    - ./tests/tests.sh
+    - ./src/tests/tests.sh
   when: on_success 
   allow_failure: false
   after_script:
