@@ -14,10 +14,10 @@ all: s21_cat s21_grep
 		
 
 s21_cat:
-		$(CC)  $(CFLAGS) test_cat.c cat.c $(LDFLAGS) -o s21_cat
+		$(CC)  $(CFLAGS) test_cat.c cat.c $(LDFLAGS) -o build/s21_cat
 
 s21_grep:
-		$(CC)  $(CFLAGS) test_grep.c grep.c $(LDFLAGS) -o s21_grep
+		$(CC)  $(CFLAGS) test_grep.c grep.c $(LDFLAGS) -o build/s21_grep
 
 clean: 
 		rm s21_cat
