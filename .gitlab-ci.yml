@@ -1,9 +1,10 @@
 stages:
   - format
   - build
-  - test
+  - tests
+  - deploy
 
-check_clang_format:
+format:
   stage: format
   script:
     - cp ../materials/linters/.clang-format ./
@@ -21,7 +22,7 @@ check_clang_format:
         echo "SUCCES!"
       fi
 
-build_project:
+build:
   stage: build
   script:
     - cd src
@@ -32,7 +33,7 @@ build_project:
       - src/build/       
     expire_in: 30 days
 
-integration_tests:
+tests:
   stage: test
   script:
     - chmod +x tests/tests.sh
@@ -47,7 +48,7 @@ integration_tests:
         echo "TEST: FAIL!"
       fi
 
-deploy_project:
+deploy:
   stage: deploy
   script:
     - chmod +x deploy.sh
