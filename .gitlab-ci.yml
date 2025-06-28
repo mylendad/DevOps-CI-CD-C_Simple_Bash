@@ -1,8 +1,8 @@
 stages:
-  - format_project
-  - build_project
-  - tests_project
-  - deploy_project
+  - format
+  - build
+  - tests
+  - deploy
 
 format_project:
   stage: format
