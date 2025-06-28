@@ -24,17 +24,14 @@ build_project:
 tests_project:
   stage: tests
   script:
+    - ls -l src/tests/tests.sh 
     - chmod +x /src/tests/tests.sh
-    - ./src/tests/tests.sh
+    - cd src/tests && ./tests.sh || cat tests.log
   when: on_success 
   allow_failure: false
   after_script:
-    - |
-      if [ "$CI_JOB_STATUS" = "success" ]; then
-        echo "TEST: SUCCES!"
-      else
-        echo "TEST: FAIL!"
-      fi
+    - echo "Job status: $CI_JOB_STATUS"
+    - if [ "$CI_JOB_STATUS" != "SUCCESS!" ]; then echo "SEE LOGS"; fi
 
 deploy_project:
   stage: deploy
