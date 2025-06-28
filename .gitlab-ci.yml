@@ -26,9 +26,11 @@ tests_project:
   script:
     - ls -l src/tests/tests.sh 
     - chmod +x /src/tests/tests.sh
-    - cd src/tests && ./tests.sh || cat tests.log
+    - cd src/tests && ./tests.sh
   when: on_success 
   allow_failure: false
+  after_script:
+    - if [ "$CI_JOB_STATUS" != "SUCCESS!" ]; then echo "FAIL!"; fi
 
 deploy_project:
   stage: deploy
