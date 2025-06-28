@@ -7,7 +7,7 @@ stages:
 format_project:
   stage: format
   tags:
-    - do-6
+    - local
   script:
     - cp materials/linters/.clang-format ./src/
     - >
@@ -27,7 +27,7 @@ format_project:
 build_project:
   stage: build
   tags:
-    - do-6
+    - local
   script:
     - cd src
     - make
@@ -40,7 +40,7 @@ build_project:
 tests_project:
   stage: tests
   tags:
-    - do-6
+    - local
   script:
     - chmod +x tests/tests.sh
     - ./src/tests/tests.sh
@@ -57,7 +57,7 @@ tests_project:
 deploy_project:
   stage: deploy
   tags:
-    - do-6
+    - local
   script:
     - chmod +x deploy.sh
     - ./deploy.sh
