@@ -15,9 +15,7 @@ if [ ! -f src/.clang-format ]; then
     exit 2
   fi
 
-FORMAT_DIFF=$(find src/ -name "*.c" -o -name "*.h" \
-  | xargs clang-format -style=file -output-replacements-xml \
-  | grep -c "<replacement ")
+FORMAT_DIFF=$(find src/ -name "*.c" -o -name "*.h" | xargs clang-format -style=file -output-replacements-xml | grep -c "<replacement ")
 
 if [ "$FORMAT_DIFF" -ne 0 ]; then
   find src/ -name "*.c" -o -name "*.h" | while read file; do
