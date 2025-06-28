@@ -7,7 +7,7 @@ stages:
 format_project:
   stage: format
   script:
-    - cp materials/linters/.clang-format ./
+    - cp materials/linters/.clang-format ./src/
     - >
       FORMAT_DIFF=$(find src/ -name "*.c" -o -name "*.h" | xargs clang-format -style=file -output-replacements-xml |
       grep -c "<replacement ")
