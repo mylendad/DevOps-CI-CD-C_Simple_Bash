@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 
 diff <(./s21_cat "$FILE") <(cat "$FILE") && echo "SUCCES!" || echo "FAIL!"
 		diff <(./s21_cat -e "$FILE") <(cat -e "$FILE") && echo "SUCCES!" || echo "FAIL!"
