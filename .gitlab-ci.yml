@@ -6,8 +6,6 @@ stages:
 
 format_project:
   stage: format
-  tags:
-    - local
   script:
     - cp materials/linters/.clang-format ./src/
     - >
@@ -26,8 +24,6 @@ format_project:
 
 build_project:
   stage: build
-  tags:
-    - local
   script:
     - cd src
     - make
@@ -39,8 +35,6 @@ build_project:
 
 tests_project:
   stage: tests
-  tags:
-    - local
   script:
     - chmod +x tests/tests.sh
     - ./src/tests/tests.sh
@@ -56,8 +50,6 @@ tests_project:
 
 deploy_project:
   stage: deploy
-  tags:
-    - local
   script:
     - chmod +x deploy.sh
     - ./deploy.sh
