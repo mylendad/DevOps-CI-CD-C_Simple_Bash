@@ -34,7 +34,7 @@ build_project:
     expire_in: 30 days
 
 tests_project:
-  stage: test
+  stage: tests
   script:
     - chmod +x tests/tests.sh
     - ./tests/tests.sh
