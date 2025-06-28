@@ -4,11 +4,13 @@ LDFLAGS=-g
 MATHFLAG=-lm
 TARGET=main
 SHELL:=/bin/bash
-FILE=test_files/test.txt test_files/test_2.txt ./test_files/empty.txt fergth
+FILE=tests/test_files/test.txt tests/test_files/test_2.txt tests/test_files/empty.txt
 FILEERROR=qwerty
 CHECK=2>&1 valgrind --tool=memcheck --leak-check=yes
 
-all: s21_cat s21_grep tests clean
+.PHONY: tests s21_cat s21_grep
+
+all: s21_cat s21_grep
 		
 
 s21_cat:
@@ -28,5 +30,14 @@ leaks_mac_os:
 		leaks -atExit -- ./s21_cat
 
 tests:
-		chmod +x tests.sh
-		./tests.sh
+		chmod +x tests/tests.sh
+		tests/tests.sh
+
+style:
+		cp ../materials/linters/.clang-format ./
+		clang-format -n ./*.c
+		clang-format -n ./*.h
+		clang-format -i ./*.c
+		clang-format -i ./*.h
+		clang-format -n ./*.c
+		clang-format -n ./*.h
