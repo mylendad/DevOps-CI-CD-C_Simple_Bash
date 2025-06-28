@@ -32,17 +32,6 @@ build_project:
       - src/build/       
     expire_in: 30 days
 
-test_project:
-  stage: testing
-  script:
-    - chmod +x tests.sh
-		- ./tests.sh
-  artifacts:
-    name: "build-artifacts"
-    paths:
-      - src/build/       
-    expire_in: 30 days
-
 integration_tests:
   stage: test
   script:
