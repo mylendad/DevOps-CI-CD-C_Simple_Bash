@@ -4,7 +4,7 @@
 #include <regex.h>
 #include <stdio.h>
 
-#define MAX_LINE_SIZE 1024
+#define MAX_LINE_SIZE 1025
 
 typedef struct flags {
   int error;
