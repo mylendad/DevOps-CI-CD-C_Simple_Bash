@@ -10,6 +10,6 @@ REMOTE_HOST=10.0.2.15
 REMOTE_DIR=/usr/local/bin
 LOCAL_DIR=src/build/*
 
-ssh -v -o BatchMode=yes ${REMOTE_USER}@${REMOTE_HOST} "SSH test OK!"
+ssh -v -o BatchMode=yes ${REMOTE_USER}@${REMOTE_HOST}
 
 scp -v $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
