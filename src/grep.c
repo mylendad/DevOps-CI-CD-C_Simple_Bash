@@ -7,8 +7,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_LINE_SIZE 1024
-
 flags parser(int argc, char **argv) {
   flags argument = {0};
   errno = 22;
