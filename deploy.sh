@@ -12,4 +12,4 @@ LOCAL_DIR=src/build/*
 
 ssh -v -o BatchMode=yes ${REMOTE_USER}@${REMOTE_HOST}
 
-scp -v $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
+scp -o StrictHostKeyChecking=no -v $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
