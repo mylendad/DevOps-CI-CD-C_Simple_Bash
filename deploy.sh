@@ -10,4 +10,4 @@ LOCAL_DIR=src/build/*
 
 scp $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
 
-echo "DEPLOY: SUCCES!"
+echo "DEPLOY:SUCCES!"
