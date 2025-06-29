@@ -33,8 +33,6 @@ tests_project:
 
 deploy_project:
   stage: deploy
-  deploy:
-  stage: deploy
   before_script:
     - mkdir -p ~/.ssh
     - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts 
