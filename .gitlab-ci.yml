@@ -24,7 +24,7 @@ build_project:
 tests_project:
   stage: tests
   script:
-    - chmod +x tests/tests.sh
+    - chmod +x src/tests/tests.sh
     - cd tests && ./tests.sh
   when: on_success 
   allow_failure: false
