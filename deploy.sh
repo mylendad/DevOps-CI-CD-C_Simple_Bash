@@ -12,6 +12,5 @@ ssh -o BatchMode=yes \
     -o UserKnownHostsFile=$HOME/.ssh/known_hosts \
     ${REMOTE_USER}@${REMOTE_HOST}
 
-scp -o StrictHostKeyChecking=yes \
-    -o UserKnownHostsFile=$HOME/.ssh/known_hosts \
+scp  -o UserKnownHostsFile=$HOME/.ssh/known_hosts \
     $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
