@@ -6,7 +6,7 @@ echo "Home dir: $HOME"
 ls -la ~/.ssh
 
 REMOTE_USER=mylendad
-REMOTE_HOST=10.0.2.15
+REMOTE_HOST=192.168.100.2
 REMOTE_DIR=/usr/local/bin
 LOCAL_DIR=src/build/*
 
