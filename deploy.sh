@@ -10,7 +10,6 @@ LOCAL_DIR=src/build/*
 
 ssh -o BatchMode=yes \
     -o StrictHostKeyChecking=no \
-    -o UserKnownHostsFile=$HOME/.ssh/known_hosts \
     ${REMOTE_USER}@${REMOTE_HOST}
 
 scp -o StrictHostKeyChecking=no \
