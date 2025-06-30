@@ -9,8 +9,10 @@ REMOTE_DIR=/usr/local/bin
 LOCAL_DIR=src/build/*
 
 ssh -o BatchMode=yes \
+    -o StrictHostKeyChecking=no \
     -o UserKnownHostsFile=$HOME/.ssh/known_hosts \
     ${REMOTE_USER}@${REMOTE_HOST}
 
-scp  -o UserKnownHostsFile=$HOME/.ssh/known_hosts \
+scp -o StrictHostKeyChecking=no \
+    -o UserKnownHostsFile=$HOME/.ssh/known_hosts \
     $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
