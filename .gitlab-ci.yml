@@ -34,15 +34,8 @@ tests_project:
 deploy_project:
   stage: deploy
   before_script:
-    - mkdir -p ~/.ssh
-    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-    - ssh-keyscan -t rsa 10.0.2.15 >> ~/.ssh/known_hosts
-    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-    - chmod 700 ~/.ssh
-    - chmod 600 ~/.ssh/*
   script:
     - ls -la ~/.ssh
-    - cat ~/.ssh/known_hosts 
     - chmod +x deploy.sh
     - ./deploy.sh
   when: manual
