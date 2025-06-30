@@ -10,6 +10,6 @@ REMOTE_HOST=192.168.100.2
 REMOTE_DIR=/usr/local/bin
 LOCAL_DIR=src/build/*
 
-ssh -v -o BatchMode=yes ${REMOTE_USER}@${REMOTE_HOST}
+ssh -o BatchMode=yes ${REMOTE_USER}@${REMOTE_HOST}
 
-scp -o StrictHostKeyChecking=no -v $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
+scp $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
