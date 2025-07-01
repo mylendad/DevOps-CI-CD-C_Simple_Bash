@@ -17,10 +17,3 @@ void print(char *argv[], flags *flag);
 void output(flags *argument, int file_count, char *argv[]);
 
 #endif  // CAT_Haaa
-ssh -
-    ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOxhdD0zG2qt4C4YE8kS0GgQUeC39Rx6UqikwkD6QGeU
-        gitlab -
-    runner @mylendadserver ssh -
-    ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOxhdD0zG2qt4C4YE8kS0GgQUeC39Rx6UqikwkD6QGeU
-        gitlab -
-    runner @mylendadserver
