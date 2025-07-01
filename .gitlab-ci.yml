@@ -46,6 +46,6 @@ notifications_project:
   stage: notification
   script:
     - chmod +x bot.sh
-    ./bot.sh "$CI_JOB_STATUS"
+    - ./bot.sh "$CI_JOB_STATUS"
   allow_failure: false
   
