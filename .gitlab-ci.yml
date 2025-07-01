@@ -10,6 +10,7 @@ format_project:
   script:
     - chmod +x ./format.sh
     - ./format.sh
+  allow_failure: false
 
 build_project:
   stage: build
@@ -21,6 +22,7 @@ build_project:
     paths:
       - src/build/       
     expire_in: 30 days
+  allow_failure: false
 
 tests_project:
   stage: tests
@@ -30,7 +32,8 @@ tests_project:
   when: on_success 
   allow_failure: false
   after_script:
-    - if [ "$CI_JOB_STATUS" != "SUCCESS!!!!" ]; then echo "FAIL!"; fi
+    - if [ "$CI_JOB_STATUS" != "SUCCES!" ]; then echo "FAIL!"; fi
+  
 
 deploy_project:
   stage: deploy
