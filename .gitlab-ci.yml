@@ -46,7 +46,6 @@ deploy_project:
 
 notifications_project:
   stage: notification
-  before_script:
   script:
     - chmod +x bot.sh
     - ./bot.sh
