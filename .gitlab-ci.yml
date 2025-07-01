@@ -47,5 +47,4 @@ notifications_project:
   script:
     - chmod +x bot.sh
     - ./bot.sh "$CI_JOB_STATUS"
-  allow_failure: false
   
