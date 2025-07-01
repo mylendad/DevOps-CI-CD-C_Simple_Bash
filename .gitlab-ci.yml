@@ -3,6 +3,7 @@ stages:
   - build
   - tests
   - deploy
+  - notifications
 
 format_project:
   stage: format
@@ -40,3 +41,14 @@ deploy_project:
     - ./deploy.sh
   when: manual
   allow_failure: false
+  after_script:
+    - ./bot.sh "$CI_JOB_STATUS"
+
+notifications_project:
+  stage: notification
+  before_script:
+  script:
+    - chmod +x bot.sh
+    - ./bot.sh
+  allow_failure: false
+  
