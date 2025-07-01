@@ -41,13 +41,11 @@ deploy_project:
     - ./deploy.sh
   when: manual
   allow_failure: false
-  after_script:
-    - ./bot.sh "$CI_JOB_STATUS"
 
 notifications_project:
   stage: notification
   script:
     - chmod +x bot.sh
-    - ./bot.sh
+    ./bot.sh "$CI_JOB_STATUS"
   allow_failure: false
   
