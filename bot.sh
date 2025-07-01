@@ -1,7 +1,6 @@
 #!/bin/bash
 
-TELEGRAM_BOT_TOKEN=$(cat TOKEN)
-TELEGRAM_USER_ID=$(cat TELEGRAM_USER_ID)
+source /home/gitlab-runner/env.sh
 TIME=60
 set -ex
 
