@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# if [[ ${2} == "1" ]] && [[ $CI_JOB_STATUS == "success" ]]; then
-#     exit;\\\\
-# fi
+if [[ ${2} == "1" ]] && [[ $CI_JOB_STATUS == "success" ]]; then
+    exit;
+fi
 
 source /home/gitlab-runner/env.sh
 TIME=60
