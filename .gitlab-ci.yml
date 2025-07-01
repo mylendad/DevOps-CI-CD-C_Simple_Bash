@@ -3,7 +3,7 @@ stages:
   - build
   - tests
   - deploy
-  - notifications
+  - notification
 
 format_project:
   stage: format
