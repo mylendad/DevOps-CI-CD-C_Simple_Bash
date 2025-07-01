@@ -20,8 +20,8 @@ s21_grep:
 		$(CC)  $(CFLAGS) test_grep.c grep.c $(LDFLAGS) -o build/s21_grep
 
 clean: 
-		rm s21_cat
-		rm s21_grep
+		rm build/s21_cat
+		rm build/s21_grep
 
 leaks_linux:
 		valgrind --tool=memcheck --leak-check=yes ./s21_cat
