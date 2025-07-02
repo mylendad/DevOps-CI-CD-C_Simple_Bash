@@ -17,4 +17,4 @@ void print(char *argv[], flags *flag);
 
     void output(flags *argument, int file_count, char *argv[]);
 
-#endif  // CAT_Haaa
+#endif  // CAT_Haaaaa
