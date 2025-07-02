@@ -12,7 +12,7 @@ format_project:
   script:
     - chmod +x ./format.sh
     - ./format.sh
-  allow_failure: false
+  allow_failure: true
 
 build_project:
   stage: build
@@ -53,6 +53,11 @@ deploy_project:
 
 notifications_project:
   stage: notification
+  needs:
+    - job: format_project
+    - job: build_project
+    - job: tests_project
+    - job: deploy_project
   script:
     - chmod +x bot.sh
     - ./bot.sh

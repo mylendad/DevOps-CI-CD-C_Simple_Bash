@@ -12,6 +12,5 @@ scp $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
 
 touch /home/gitlab-runner/env_new.sh
 chmod +w /home/gitlab-runner/env_new.sh
-sleep 45
 echo "DEPLOY_JOB_STATUS=$CI_JOB_STATUS" > /home/gitlab-runner/env_new.sh
 cat /home/gitlab-runner/env_new.sh
