@@ -34,7 +34,10 @@ tests_project:
   when: on_success 
   allow_failure: false
   after_script:
-    - if [ "$CI_JOB_STATUS" != "SUCCES!" ]; then echo "FAIL!"; fi
+    - if [ "$CI_JOB_STATUS" != "SUCCES!" ]; then echo "SUCCES!"
+      else
+        echo "FAIL!"
+      fi
   
 
 deploy_project:
