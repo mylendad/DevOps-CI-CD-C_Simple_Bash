@@ -43,11 +43,11 @@ deploy_project:
   script:
     - ls -la ~/.ssh
     - chmod +x deploy.sh
+    - chmod +w /home/gitlab-runner/env.sh
     - ./deploy.sh
   when: manual
   allow_failure: false
   after_script: 
-    - chmod +w /home/gitlab-runner/env.sh
     - echo "DEPLOY_JOB_STATUS=$CI_JOB_STATUS" >> /home/gitlab-runner/env.sh
 
 notifications_project:
@@ -55,4 +55,6 @@ notifications_project:
   script:
     - chmod +x bot.sh
     - ./bot.sh
+  after_script:
+    - cd src && make clean
   
