@@ -3,7 +3,6 @@
 
 #define MAX_LINE_SIZE 2003
 
-
 typedef struct flags {
   int error;
   int b, n, e, E, s, t, T, v;
@@ -15,6 +14,6 @@ void outline(flags *argument, char *line, int n);
 
 void print(char *argv[], flags *flag);
 
-    void output(flags *argument, int file_count, char *argv[]);
+void output(flags *argument, int file_count, char *argv[]);
 
 #endif  // CAT_Haaaaa
