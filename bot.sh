@@ -3,6 +3,9 @@
 JOBS_JSON=$(curl -s --header "PRIVATE-TOKEN: $TOKEN" \
   "$CI_API_V4_URL/projects/$CI_PROJECT_ID/pipelines/$CI_PIPELINE_ID/jobs")
 
+echo "JOBS_JSON:"
+echo "$JOBS_JSON" | head -n 20
+
 get_status() {
   echo "$JOBS_JSON" | jq -r ".[] | select(.name==\"$1\") | .status"
 }
