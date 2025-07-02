@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /home/gitlab-runner/env.sh
+
 JOBS_JSON=$(curl -s --header "PRIVATE-TOKEN: $TOKEN" \
   "$CI_API_V4_URL/projects/$CI_PROJECT_ID/pipelines/$CI_PIPELINE_ID/jobs")
 
@@ -15,7 +17,6 @@ STATUS_BUILD=$(get_status build_project)
 STATUS_TESTS=$(get_status tests_project)
 STATUS_DEPLOY=$(get_status deploy_project)
 
-source /home/gitlab-runner/env.sh
 set -ex
 
 URL="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
