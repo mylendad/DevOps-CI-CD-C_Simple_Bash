@@ -9,6 +9,8 @@ JOBS_JSON=$(curl -s --header "PRIVATE-TOKEN: $TOKEN" \
 
 echo "JOBS_JSON:"
 echo "$JOBS_JSON" | head -n 20
+echo "== Все job'ы текущего пайплайна:"
+echo "$JOBS_JSON" | jq -r '.[] | "\(.name): \(.status)"'  
 
 get_status() {
   echo "$JOBS_JSON" | jq -r ".[] | select(.name==\"$1\") | .status"
