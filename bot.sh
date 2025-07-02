@@ -5,6 +5,7 @@ if [[ ${2} == "1" ]] && [[ $CI_JOB_STATUS == "success" ]]; then
 fi
 
 source /home/gitlab-runner/env.sh
+source /home/gitlab-runner/new_env.sh
 TIME=60
 set -ex
 
