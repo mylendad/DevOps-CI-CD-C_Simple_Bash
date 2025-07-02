@@ -14,6 +14,7 @@ all: s21_cat s21_grep
 		
 
 s21_cat:
+		mkdir -p build
 		$(CC)  $(CFLAGS) test_cat.c cat.c $(LDFLAGS) -o build/s21_cat
 
 s21_grep:
