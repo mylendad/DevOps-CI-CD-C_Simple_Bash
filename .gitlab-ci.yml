@@ -46,6 +46,8 @@ deploy_project:
     - ./deploy.sh
   when: manual
   allow_failure: false
+  after_script: chmod +w /home/gitlab-runner/env.sh
+echo "DEPLOY_JOB_STATUS=$CI_JOB_STATUS" >> /home/gitlab-runner/env.sh
 
 notifications_project:
   stage: notification

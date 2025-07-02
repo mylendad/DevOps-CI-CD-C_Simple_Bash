@@ -9,6 +9,3 @@ REMOTE_DIR=/usr/local/bin
 LOCAL_DIR=src/build/*
 
 scp $LOCAL_DIR ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}
-
-chmod +w /home/gitlab-runner/env.sh
-echo "DEPLOY_JOB_STATUS=$CI_JOB_STATUS" >> /home/gitlab-runner/env.sh
