@@ -43,7 +43,6 @@ deploy_project:
   script:
     - ls -la ~/.ssh
     - chmod +x deploy.sh
-    - chmod +w /home/gitlab-runner/env.sh
     - ./deploy.sh
   when: manual
   allow_failure: false
