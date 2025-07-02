@@ -1,7 +1,7 @@
 #ifndef CAT_H
 #define CAT_H
 
-#define MAX_LINE_SIZE 2004
+#define MAX_LINE_SIZE 2003
 
 
 typedef struct flags {
